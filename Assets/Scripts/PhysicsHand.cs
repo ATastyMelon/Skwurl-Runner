@@ -15,6 +15,10 @@ public class PhysicsHand : MonoBehaviour
     [SerializeField] float climbForce = 500f;
     [SerializeField] float climbDrag = 250f;
 
+    [Space]
+    [Header("Audio")]
+    [SerializeField] AudioSource stepSound;
+
     Vector3 _previousPosition;
     Rigidbody _rigidBody;
     bool _isColiding;
@@ -93,9 +97,16 @@ public class PhysicsHand : MonoBehaviour
         _previousPosition = transform.position;
         return drag;
     }
+
+    public void Step()
+    {
+        stepSound.Play();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         _isColiding = true;
+        Step();
     }
 
     private void OnCollisionExit(Collision collision)
