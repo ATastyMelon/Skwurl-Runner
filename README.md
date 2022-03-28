@@ -1,4 +1,4 @@
-# Skwurl-Runner
+# Skwurl Runner
 
 Skwurl Runner is a Gorilla Tag like game I am trying to make for fun and a learning experience
 
