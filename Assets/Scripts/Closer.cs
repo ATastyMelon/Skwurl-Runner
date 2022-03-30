@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crasher : MonoBehaviour
+public class Closer : MonoBehaviour
 {
 
     [SerializeField] GameObject vrRig;
