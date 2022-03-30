@@ -12,8 +12,8 @@ Sidequestvr and a link cable
 
 ## Installation
 
-Open sidequest and have your quest connect to your pc, and drag the skwurlrunner.apk file onto sidequest to install.
+Open sidequest and have your quest connected to your pc via link cable, and click the install apk button, and chose the skwurlrunner.apk file to install.
 
-If you need sidequest, go to this link [Here](https://sidequestvr.com/)
+If you need sidequest, go to this link [here](https://sidequestvr.com/)
 
 ## Have Fun!
