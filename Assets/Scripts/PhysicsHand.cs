@@ -12,8 +12,8 @@ public class PhysicsHand : MonoBehaviour
 
     [Space]
     [Header("Springs")]
-    [SerializeField] float climbForce = 500f;
-    [SerializeField] float climbDrag = 250f;
+    [SerializeField] float climbForce = 280f;
+    [SerializeField] float climbDrag = 6f;
 
     [Space]
     [Header("Audio")]
@@ -44,7 +44,7 @@ public class PhysicsHand : MonoBehaviour
         
     }
 
-    void PIDMovement()
+    Vector3 PIDMovement()
     {
         float kp = (6f * frequency) * (6f * frequency) * 0.25f;
         float kd = 4.5F * frequency * damping;
@@ -54,9 +54,10 @@ public class PhysicsHand : MonoBehaviour
         Vector3 force = (target.position - transform.position) * ksg + (playerRigidBody.velocity - _rigidBody.velocity) * kdg;
 
         _rigidBody.AddForce(force, ForceMode.Acceleration);
+        return force;
     }
 
-    void PIDRotation()
+    Vector3 PIDRotation()
     {
         float kp = (6f * rotFrequency) * (6f * rotFrequency) * 0.25f;
         float kd = 4.5f * rotFrequency * rotDamping;
@@ -75,25 +76,26 @@ public class PhysicsHand : MonoBehaviour
         axis.Normalize();
         axis *= Mathf.Deg2Rad;
         Vector3 torque = ksg * axis * angle + -_rigidBody.angularVelocity * kdg;
-
         _rigidBody.AddTorque(torque, ForceMode.Acceleration);
+        return torque;
     }
 
     private void HookesLaw()
     {
         Vector3 displacementFromTarget = transform.position - target.position;
         Vector3 force = displacementFromTarget * climbForce;
-        float drag = GetDrag();
+        Vector3 drag = -playerRigidBody.velocity * climbDrag;
 
         playerRigidBody.AddForce(force, ForceMode.Acceleration);
-        playerRigidBody.AddForce(drag * -playerRigidBody.velocity * climbDrag, ForceMode.Acceleration);
+        playerRigidBody.AddForce(drag, ForceMode.Acceleration);
     }
 
     float GetDrag()
     {
         Vector3 handVelocity = (target.localPosition - _previousPosition) / Time.fixedDeltaTime;
         float drag = 1 / handVelocity.magnitude + 0.01f;
-        drag = Mathf.Clamp(drag, 0.03f, 1f);
+        drag = drag > 1 ? 1 : drag;
+        drag = drag < 0.03f ? 0.03f : drag;
         _previousPosition = transform.position;
         return drag;
     }

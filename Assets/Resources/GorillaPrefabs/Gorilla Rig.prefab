@@ -55,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &430285556866155478
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +253,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -275,6 +278,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &430285557067231374
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,18 +323,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UpdateTrackingType: 0
+  m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_PoseProvider: {fileID: 0}
+  m_ModelPrefab: {fileID: 0}
+  m_ModelParent: {fileID: 0}
+  m_Model: {fileID: 0}
+  m_AnimateModel: 0
+  m_ModelSelectTransition: 
+  m_ModelDeSelectTransition: 
   m_ControllerNode: 5
   m_SelectUsage: 3
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_ModelPrefab: {fileID: 0}
-  m_ModelTransform: {fileID: 0}
-  m_AnimateModel: 0
-  m_ModelSelectTransition: 
-  m_ModelDeSelectTransition: 
+  m_RotateAnchorLeft: 16
+  m_RotateAnchorRight: 17
+  m_MoveObjectIn: 14
+  m_MoveObjectOut: 15
+  m_PoseProvider: {fileID: 0}
 --- !u!1 &430285557273465589
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,12 +387,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7448815bd5148434682b3d931066cd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RigBaseGameObject: {fileID: 430285557273465589}
+  m_Camera: {fileID: 0}
+  m_OriginBaseGameObject: {fileID: 430285557273465589}
   m_CameraFloorOffsetObject: {fileID: 430285557519011101}
-  m_CameraGameObject: {fileID: 430285556866155478}
-  m_TrackingOriginMode: 2
-  m_TrackingSpace: 3
+  m_RequestedTrackingOriginMode: 0
   m_CameraYOffset: 2.5
+  m_CameraGameObject: {fileID: 430285556866155478}
 --- !u!1 &430285557519011101
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,35 +437,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 430285557519011101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18dcb4be0dacd14f9bb6fd32d26e078, type: 3}
+  m_Script: {fileID: 11500000, guid: 1581cdafe76ffe2409566688e400e824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   headCollider: {fileID: 430285556866155483}
   bodyCollider: {fileID: 430285557946750772}
-  leftHandFollower: {fileID: 430285556596328392}
-  rightHandFollower: {fileID: 430285556925871860}
-  rightHandTransform: {fileID: 430285557067231375}
-  leftHandTransform: {fileID: 430285557680239485}
-  velocityHistorySize: 8
+  leftHandFollower: {fileID: 0}
+  rightHandFollower: {fileID: 0}
+  rightHandTransform: {fileID: 0}
+  leftHandTransform: {fileID: 0}
+  velocityHistorySize: 0
   maxArmLength: 1.5
   unStickDistance: 1
-  velocityLimit: 0.4
-  maxJumpSpeed: 6.5
-  jumpMultiplier: 1.1
+  velocityLimit: 0
+  maxJumpSpeed: 0
+  jumpMultiplier: 0
   minimumRaycastDistance: 0.05
   defaultSlideFactor: 0.03
-  minimumStickLength: 0.01
-  stickAssist: 0.5
   defaultPrecision: 0.995
   rightHandOffset: {x: 0, y: 0, z: 0}
   leftHandOffset: {x: 0, y: 0, z: 0}
   locomotionEnabledLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   wasLeftHandTouching: 0
-  leftHandStickNormal: {x: 0, y: 0, z: 0}
   wasRightHandTouching: 0
-  rightHandStickNormal: {x: 0, y: 0, z: 0}
   disableMovement: 0
 --- !u!54 &430285557519011168
 Rigidbody:
@@ -517,18 +523,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UpdateTrackingType: 0
+  m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_PoseProvider: {fileID: 0}
+  m_ModelPrefab: {fileID: 0}
+  m_ModelParent: {fileID: 0}
+  m_Model: {fileID: 0}
+  m_AnimateModel: 0
+  m_ModelSelectTransition: 
+  m_ModelDeSelectTransition: 
   m_ControllerNode: 4
   m_SelectUsage: 3
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_ModelPrefab: {fileID: 0}
-  m_ModelTransform: {fileID: 0}
-  m_AnimateModel: 0
-  m_ModelSelectTransition: 
-  m_ModelDeSelectTransition: 
+  m_RotateAnchorLeft: 16
+  m_RotateAnchorRight: 17
+  m_MoveObjectIn: 14
+  m_MoveObjectOut: 15
+  m_PoseProvider: {fileID: 0}
 --- !u!1 &430285557946750770
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +597,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -609,6 +622,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &430285557946750772
 CapsuleCollider:
   m_ObjectHideFlags: 0
