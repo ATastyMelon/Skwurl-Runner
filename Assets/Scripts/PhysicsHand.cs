@@ -34,8 +34,8 @@ public class PhysicsHand : MonoBehaviour
 
     void FixedUpdate()
     {
-        PIDMovement();
-        PIDRotation();
+        _rigidBody.AddTorque(PIDRotation(), ForceMode.Acceleration);
+        _rigidBody.AddForce(PIDMovement(), ForceMode.Acceleration);
         if (_isColiding) HookesLaw();
     }
 
@@ -53,7 +53,7 @@ public class PhysicsHand : MonoBehaviour
         float kdg = (kd + kp * Time.fixedDeltaTime) * g;
         Vector3 force = (target.position - transform.position) * ksg + (playerRigidBody.velocity - _rigidBody.velocity) * kdg;
 
-        _rigidBody.AddForce(force, ForceMode.Acceleration);
+        // _rigidBody.AddForce(force, ForceMode.Acceleration);
         return force;
     }
 
@@ -76,7 +76,7 @@ public class PhysicsHand : MonoBehaviour
         axis.Normalize();
         axis *= Mathf.Deg2Rad;
         Vector3 torque = ksg * axis * angle + -_rigidBody.angularVelocity * kdg;
-        _rigidBody.AddTorque(torque, ForceMode.Acceleration);
+        // _rigidBody.AddTorque(torque, ForceMode.Acceleration);
         return torque;
     }
 
