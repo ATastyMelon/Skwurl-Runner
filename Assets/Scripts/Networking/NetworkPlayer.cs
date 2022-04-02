@@ -18,6 +18,11 @@ public class NetworkPlayer : MonoBehaviour
     private Transform leftHandRig;
     private Transform rightHandRig;
 
+    public bool hasAcorn = false;
+
+    public Transform networkAcorn;
+    public Transform handheldAcorn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +31,25 @@ public class NetworkPlayer : MonoBehaviour
         headRig = rig.transform.Find("Camera Offset/Main Camera");
         leftHandRig = rig.transform.Find("Physics XR Rig/Hand Left");
         rightHandRig = rig.transform.Find("Physics XR Rig/Hand Right");
-    }
+
+        if (photonView.IsMine)
+        {
+            foreach (var item in GetComponentsInChildren<Renderer>())
+            {
+                item.enabled = false;
+            }
+        }
+    } 
 
     // Update is called once per frame
     void Update()
     {
         if (photonView.IsMine)
         {
-            rightHand.gameObject.SetActive(false);
-            leftHand.gameObject.SetActive(false);
-            head.gameObject.SetActive(false);
-
             MapPosition(head, headRig);
             MapPosition(leftHand, leftHandRig);
             MapPosition(rightHand, rightHandRig);
-            MapPosition(speaker, head);
+            //MapPosition(networkAcorn, handheldAcorn);
         }
     }
 

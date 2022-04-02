@@ -1,87 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &55886674230625433
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 832422724814085667}
-  - component: {fileID: 4333174893581341062}
-  - component: {fileID: 2001411133329532236}
-  m_Layer: 0
-  m_Name: Acorn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &832422724814085667
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55886674230625433}
-  m_LocalRotation: {x: 0.0786331, y: 0, z: 0, w: 0.99690366}
-  m_LocalPosition: {x: -0, y: 0.0066, z: 0.0445}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_Children: []
-  m_Father: {fileID: 7654769394865181518}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 9.02, y: 0, z: 0}
---- !u!33 &4333174893581341062
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55886674230625433}
-  m_Mesh: {fileID: 8314571269056883277, guid: 9ecbe6f62f3e9264595002d4eb1bdca2, type: 3}
---- !u!23 &2001411133329532236
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55886674230625433}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: cea5d0dffb980294d9a7ed741d8318f4, type: 2}
-  - {fileID: 2100000, guid: 17ea43d2d7d907c49970f969fe304fce, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &86207856351790398
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +77,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7632518939969780749}
-  - {fileID: 832422724814085667}
   m_Father: {fileID: 6897286148392065475}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -208,8 +125,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6897286148392065475}
-  m_RootOrder: 3
+  m_Father: {fileID: 5195753704929979338}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &6402145397202839283
 AudioSource:
@@ -360,7 +277,6 @@ Transform:
   - {fileID: 5195753704929979338}
   - {fileID: 4720976310841655700}
   - {fileID: 7654769394865181518}
-  - {fileID: 8877721687563348140}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -405,6 +321,9 @@ MonoBehaviour:
   leftHand: {fileID: 4720976310841655700}
   rightHand: {fileID: 7654769394865181518}
   speaker: {fileID: 8877721687563348140}
+  hasAcorn: 1
+  networkAcorn: {fileID: 0}
+  handheldAcorn: {fileID: 0}
 --- !u!114 &1752567309235204384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8421257691419165158}
+  - {fileID: 8877721687563348140}
   m_Father: {fileID: 6897286148392065475}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
