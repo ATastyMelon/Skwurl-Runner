@@ -57,7 +57,7 @@ public class NetworkPlayer : MonoBehaviour
     {
         target.position = rigTransform.position;
         target.rotation = rigTransform.rotation;
-
+        target.localScale = rigTransform.localScale; 
     }
 
     void HandPosition(Transform target, Transform pHand)

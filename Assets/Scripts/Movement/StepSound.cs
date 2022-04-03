@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StepSound : MonoBehaviour
+namespace com.A_Tasty_Melon.SkwurlRunner
 {
-
-    [SerializeField] AudioSource stepSound;
-
-    private void OnCollisionEnter(Collision collision)
+    public class StepSound : MonoBehaviour
     {
-        stepSound.Play();
+
+        [SerializeField] AudioSource stepSound;
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            stepSound.Play();
+        }
     }
 }

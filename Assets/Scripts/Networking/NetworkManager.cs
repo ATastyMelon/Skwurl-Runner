@@ -6,10 +6,14 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    [Tooltip("The map you play on")]
+    public GameObject map;
 
     void Start()
     {
         ConnectToServer();
+        PhotonNetwork.AutomaticallySyncScene = true;
+        map.SetActive(true);
     }
 
     private void ConnectToServer()
@@ -23,7 +27,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Connected To Server");
         base.OnConnectedToMaster();
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 15;
+        roomOptions.MaxPlayers = 20;
         roomOptions.IsVisible = true;
         roomOptions.IsOpen = true;
 

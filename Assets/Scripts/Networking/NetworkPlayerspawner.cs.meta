@@ -3,7 +3,13 @@ guid: 1eb5376781f97f24093639d9932a50ef
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Player: {fileID: 5355942403465302122, guid: 25d35e32c3687d545a980dc0c1c3794f, type: 3}
+  - Moderator: {fileID: 5355942403465302122, guid: 521b31c2b63deb1489e21762752e195e, type: 3}
+  - Admin: {fileID: 5355942403465302122, guid: 4d304b401eccc8a4e979fd8fd034621b, type: 3}
+  - Melon: {fileID: 5355942403465302122, guid: 1590c3e86b801b74caacf13fd99d0baf, type: 3}
+  - handAcorn: {instanceID: 0}
+  - acornHat: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
