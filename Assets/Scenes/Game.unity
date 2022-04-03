@@ -185,7 +185,7 @@ MonoBehaviour:
   Moderator: {fileID: 5355942403465302122, guid: 521b31c2b63deb1489e21762752e195e, type: 3}
   Admin: {fileID: 5355942403465302122, guid: 4d304b401eccc8a4e979fd8fd034621b, type: 3}
   Crowner: {fileID: 5355942403465302122, guid: e93e61a5ddf376b4084616a3201ce3c4, type: 3}
-  Melon: {fileID: 5355942403465302122, guid: 40968889d3b6e1e47939b140b8e42a75, type: 3}
+  Melon: {fileID: 5355942403465302122, guid: 9439d5aaec7f27d4fb899e704258ec5f, type: 3}
   hasAcorn: 0
   hasCap: 0
   hasCrown: 0

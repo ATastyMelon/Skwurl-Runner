@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 1
+  m_SynchronizeScale: 0
   m_UseLocal: 1
 --- !u!1 &2108534091931124539
 GameObject:
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 2489512553399021700}
   - component: {fileID: 1752567309235204384}
   m_Layer: 0
-  m_Name: Melon Player
+  m_Name: Melon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
