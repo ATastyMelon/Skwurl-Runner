@@ -32,13 +32,13 @@ public class NetworkPlayer : MonoBehaviour
         leftHandRig = rig.transform.Find("Physics XR Rig/Hand Left");
         rightHandRig = rig.transform.Find("Physics XR Rig/Hand Right");
 
-        if (photonView.IsMine)
+        /*if (photonView.IsMine)
         {
             foreach (var item in GetComponentsInChildren<Renderer>())
             {
                 item.enabled = false;
             }
-        }
+        }*/
     } 
 
     // Update is called once per frame

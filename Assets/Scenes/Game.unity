@@ -189,7 +189,7 @@ MonoBehaviour:
   hasAcorn: 0
   hasCap: 0
   hasCrown: 0
-  isMelon: 0
+  isMelon: 1
   handAcorn: {fileID: 1069174637265746312}
   acornHat: {fileID: 4574021215018286782}
   gridCrown: {fileID: 1105423417194226484}
@@ -862,11 +862,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1069174636158933646, guid: 2818ae02596c5df45a11aec4e167f48a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1573591193826360155, guid: 2818ae02596c5df45a11aec4e167f48a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4044777014849261190, guid: 2818ae02596c5df45a11aec4e167f48a, type: 3}
       propertyPath: m_Enabled
