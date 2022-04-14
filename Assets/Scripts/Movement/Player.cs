@@ -1,4 +1,4 @@
-namespace GorillaLocomotion
+namespace com.A_Tasty_Melon.SkwurlRunner
 {
     using UnityEngine;
 

@@ -5,44 +5,50 @@ using Photon.Pun;
 using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
-{
-    [Tooltip("The map you play on")]
-    public GameObject map;
-
-    void Start()
     {
-        ConnectToServer();
-        PhotonNetwork.AutomaticallySyncScene = true;
-        map.SetActive(true);
-    }
+        [Tooltip("The map you play on")]
+        public GameObject map;
 
-    private void ConnectToServer()
+        void Start()
+        {
+            ConnectToServer();
+            PhotonNetwork.AutomaticallySyncScene = true;
+            map.SetActive(true);
+        }
+
+        private void ConnectToServer()
+        {
+            PhotonNetwork.ConnectUsingSettings();
+            Debug.Log("Try connect to server");
+        }
+
+        public override void OnConnectedToMaster()
+        {
+            Debug.Log("Connected To Server");
+            base.OnConnectedToMaster();
+            RoomOptions roomOptions = new RoomOptions();
+            roomOptions.MaxPlayers = 20;
+            roomOptions.IsVisible = true;
+            roomOptions.IsOpen = true;
+
+            PhotonNetwork.JoinOrCreateRoom("SkwurlRoom", roomOptions, TypedLobby.Default);
+        }
+
+        public override void OnJoinedRoom()
+        {
+            Debug.Log("Joined The Room");
+            base.OnJoinedRoom();
+        }
+
+    public override void OnJoinRoomFailed(short returnCode, string message)
     {
-        PhotonNetwork.ConnectUsingSettings();
-        Debug.Log("Try connect to server");
-    }
-
-    public override void OnConnectedToMaster()
-    {
-        Debug.Log("Connected To Server");
-        base.OnConnectedToMaster();
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 20;
-        roomOptions.IsVisible = true;
-        roomOptions.IsOpen = true;
-
-        PhotonNetwork.JoinOrCreateRoom("SkwurlRoom", roomOptions, TypedLobby.Default);
-    }
-
-    public override void OnJoinedRoom()
-    {
-        Debug.Log("Joined The Room");
-        base.OnJoinedRoom();
+        base.OnJoinRoomFailed(returnCode, message);
+        Debug.Log("Failed to join Room");
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        Debug.Log("Player Joined Room");
-        base.OnPlayerEnteredRoom(newPlayer);
+        {
+            Debug.Log("Player Joined Room");
+            base.OnPlayerEnteredRoom(newPlayer);
+        }
     }
-}

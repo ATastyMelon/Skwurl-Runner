@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 5195753704929979338}
+  headRenderer: {fileID: 7247837284409490057}
   leftHand: {fileID: 4720976310841655700}
   rightHand: {fileID: 7654769394865181518}
   speaker: {fileID: 8877721687563348140}

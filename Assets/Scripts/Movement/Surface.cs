@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GorillaLocomotion
+namespace com.A_Tasty_Melon.SkwurlRunner
 {
 	public class Surface : MonoBehaviour
 	{
